@@ -21,7 +21,7 @@
 | imm[11:5] | rs2   | rs1   | funct3 | imm[4:0] | opcode  |
 
 ### U-Format
-|   31–12    | 11–7 |  6–0   |
+|   31–12    | 11–7 |  6–0   |  
 | imm[31:12] |  rd  | opcode |
 
 ### J-Format
