@@ -3,7 +3,7 @@
 ## RV32I Instruction Set
 ![RV32I_Instruction_Set](./docs/images/RV32I_Instruction_Set.png)
 
-###ALU Operation Table
+### ALU Operation Table
 
 | Operation Name         | Description                  | ALU Opcode  |
 |------------------------|------------------------------|-------------|
