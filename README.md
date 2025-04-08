@@ -1,6 +1,7 @@
 # Computer_Architecture_Lab
 
 ## RV32I Instruction Set
+![RV32I_Instruction_Set](RV32I_Instruction_Set.png)
 
 ## Instruction Format 
 
