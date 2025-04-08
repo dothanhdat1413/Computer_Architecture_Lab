@@ -1,4 +1,4 @@
-module Branch_Comparator(
+module Branch_Comp(
     input [31:0] operand_0,
     input [31:0] operand_1,
     input BrUn,
