@@ -2,7 +2,7 @@
 
 ## RV32I Instruction Set
 ![RV32I_Instruction_Set](./docs/images/RV32I_Instruction_Set.png)
-
+Source: https://bit-spinner.com/rv32i/rv32i-decoder
 ### ALU Operation Table
 
 | Operation Name         | Description                  | ALU Opcode  |
