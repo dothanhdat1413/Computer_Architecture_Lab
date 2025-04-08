@@ -4,6 +4,9 @@
 
 ## Instruction Format 
 
+### R-Format
+### I-Format 
+
 ## Datapath
 
 ## Immediate Generator
