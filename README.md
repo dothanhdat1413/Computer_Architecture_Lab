@@ -3,6 +3,30 @@
 ## RV32I Instruction Set
 ![RV32I_Instruction_Set](./docs/images/RV32I_Instruction_Set.png)
 
+ALU Operations in RV32I:
+- ADD: +
+- SUB: -
+- AND: &
+- OR : |
+- XOR: ^
+- SLL: >>
+- SL
+
+## 🔧 ALU Operation Table
+
+| Operation Name         | Description                  | ALU Opcode  |
+|------------------------|------------------------------|-------------|
+| ADD                    | Addition                     | 4'b0000     |
+| SUB                    | Subtraction                  | 4'b0001     |
+| AND                    | Bitwise AND                  | 4'b0010     |
+| OR                     | Bitwise OR                   | 4'b0011     |
+| XOR                    | Bitwise XOR                  | 4'b0100     |
+| SHL_LOGICAL            | Shift Left Logical           | 4'b0110     |
+| SHR_LOGICAL            | Shift Right Logical          | 4'b0111     |
+| SHR_ARITHMETIC         | Shift Right Arithmetic       | 4'b1000     |
+| LESS_THAN              | Compare Less Than (Signed)   | 4'b1001     |
+
+
 ## Instruction Format 
 
 ### R-Format
