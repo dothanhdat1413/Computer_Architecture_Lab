@@ -78,7 +78,7 @@ imm[31:12] → {imm[31:12], 12'b0}
 Input signal: 
 1. BrUN
 2. Operand_0
-3. Operand_1
+3. Operand_1  
 Output signal:
 1. BrEq: = 1 when Operand_0 = Operand_1
 2. BrLT: = 1 when Operand_0 < Operand_1. The unsigned/signed comparison is based on BrUn(1 for unsigned, 0 for signed) 
