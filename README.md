@@ -54,7 +54,26 @@
 ## Datapath
 
 ## Immediate Generator
-
+### I-Format & S-Format
+The immediate field is a 12-bit signed value.
+The output immediate is formed by copying the most significant bit (bit 11) to fill the upper 20 bits (sign-extending):
+```
+imm[11:0] → {20{imm[11]}, imm[11:0]}
+```
+### B-Format & J-Format
+The immediate field is a 12-bit signed value. But it encodes 13-bit signed offset. This is because RISC-V wants to support the possibility of 2-byte instruction, therefore the LSB bit is always 0.
+The output immediate is formed by:
+1. Appending 1'b0 to the right (shift-left by 1),
+2. Then sign-extending from bit 12 to the upper 19 bits.
+```
+imm[12:1] → {19{imm[12]}, imm[12:1], 1'b0}
+```
+### U-Format
+The immediate field is a 20-bit signed value. It represents the value of 20 MSB bit of the output immediate.
+The output immediate is formed by filling '0s to the lower 12-bit.
+```
+imm[31:12] → {imm[31:12], 12'b0}
+```
 ## Branch comparator
 
 ## Reference
