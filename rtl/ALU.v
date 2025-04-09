@@ -2,7 +2,7 @@ module ALU(
     input [3:0] opcode,
     input [31:0] operand_0,
     input [31:0] operand_1,
-    output reg [31:0] result,
+    output reg [31:0] result
 );
 
 localparam ADD              = 4'b0000; 

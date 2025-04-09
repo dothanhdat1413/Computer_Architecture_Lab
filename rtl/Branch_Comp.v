@@ -3,7 +3,7 @@ module Branch_Comp(
     input [31:0] operand_1,
     input BrUn,
     output BrEq,
-    output BrLT,
+    output BrLT
 );
 
 always @(*) begin

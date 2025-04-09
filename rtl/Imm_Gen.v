@@ -1,7 +1,7 @@
 module Imm_Gen(
     input [2:0] opcode,
     input [20:0] imm,
-    output reg [31:0] imm_out,
+    output reg [31:0] imm_out
 );
 
 localparam I_S_FORMAT = 3'b001;
