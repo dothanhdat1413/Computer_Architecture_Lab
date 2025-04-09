@@ -132,6 +132,40 @@ module test_ALU();
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(ADD, ADD_operand_0[i], ADD_operand_1[i]);
         end
+        
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(SUB, SUB_operand_0[i], SUB_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(AND, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(OR, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(XOR, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(SHL_LOGICAL, SHL_LOGICAL_operand_0[i], SHL_LOGICAL_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(SHR_LOGICAL, SHR_LOGICAL_operand_0[i], SHR_LOGICAL_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(SHR_ARITHMETIC, SHR_ARITHMETIC_operand_0[i], SHR_ARITHMETIC_operand_1[i]);
+        end
+
+        for(i = 0; i < 1000; i = i+1) begin
+            drive_input(LESS_THAN, LESS_THAN_operand_0[i], LESS_THAN_operand_1[i]);
+        end
+
+        $finish;
     end
 //__________________________Check output____________________________//
     always @(result) begin
