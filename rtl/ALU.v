@@ -1,5 +1,5 @@
 module ALU(
-    input [3:0] opcode,
+    input [3:0] ALU_Sel,
     input [31:0] operand_0,
     input [31:0] operand_1,
     output reg [31:0] result
@@ -19,7 +19,7 @@ localparam SHR_ARITHMETIC   = 4'b1000;
 localparam LESS_THAN    = 4'b1001;
 
 always @(*) begin
-    case (opcode)
+    case (ALU_Sel)
         ADD: result = operand_0 + operand_1;
         SUB: result = operand_0 - operand_1;
         

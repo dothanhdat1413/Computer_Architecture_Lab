@@ -52,7 +52,7 @@ Source: https://bit-spinner.com/rv32i/rv32i-decoder
 | imm[20] | imm[10:1] | imm[11] | imm[19:12] |  rd  | opcode  |
 ```
 ## Datapath
-
+![RV32I_Datapath](./docs/images/RV32I_Datapath.png)
 ## Immediate Generator
 ### I-Format & S-Format
 The immediate field is a 12-bit signed value.

@@ -1,17 +1,17 @@
 module test_ALU();
-    reg [3:0] opcode;
+    reg [3:0] ALU_Sel;
     reg [31:0] operand_0;
     reg [31:0] operand_1;
     wire [31:0] result;
 
     ALU DUT(
-        .opcode(opcode),
+        .ALU_Sel(ALU_Sel),
         .operand_0(operand_0),
         .operand_1(operand_1),
         .result(result)
     );
 
-//__________________________ALU Opcodes_____________________________//
+//__________________________ALU ALU_Sels_____________________________//
     localparam ADD              = 4'b0000; 
     localparam SUB              = 4'b0001; 
     localparam AND              = 4'b0010;
@@ -115,13 +115,13 @@ module test_ALU();
 
 //_______________________Drive input task___________________________//
     task drive_input;
-        input [3:0] opcode_t;
+        input [3:0] ALU_Sel_t;
         input [31:0] operand_0_t;
         input [31:0] operand_1_t;
         begin
             operand_0 = operand_0_t;
             operand_1 = operand_1_t;
-            opcode = opcode_t;
+            ALU_Sel = ALU_Sel_t;
             #1;
         end
     endtask
@@ -169,7 +169,7 @@ module test_ALU();
     end
 //__________________________Check output____________________________//
     always @(result) begin
-        case (opcode)
+        case (ALU_Sel)
             ADD: begin
                 if (result !== operand_0 + operand_1) begin
                     $display("ADD failed: %d + %d != %d", operand_0, operand_1, result);
