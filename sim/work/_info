@@ -1,0 +1,104 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/sim
+T_opt
+!s110 1744789478
+VOm<j24oPKj]oFeNSIz1LG1
+04 3 4 work ALU fast 0
+Z2 04 8 4 work test_ALU fast 0
+=1-b03cdc26cd7a-67ff5fe4-2a5-3174
+Z3 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1744799203
+V5`[CKAThAWYmDl]ZUNT3V0
+R2
+=12-b03cdc26cd7a-67ff85e3-1f6-52cc
+R3
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+vALU
+Z6 !s110 1744799201
+!i10b 1
+!s100 lAmN^X>7kTGl6Mom3NZ<P1
+I61WhiH?;7aAJ>o4L>2cX:3
+R1
+w1744798343
+8F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v
+FF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v
+!i122 68
+L0 1 38
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z9 !s108 1744799201.000000
+!s107 F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+n@a@l@u
+vtest_ALU
+R6
+!i10b 1
+!s100 1JL4>Z4iO:fmAY];R`^n:2
+I=@I`GEG7VH9DLLA`^^THi0
+R1
+w1744799198
+8F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v
+FF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v
+!i122 67
+L0 1 241
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v|
+!i113 0
+R10
+R4
+ntest_@a@l@u

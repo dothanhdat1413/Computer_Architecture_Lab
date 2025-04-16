@@ -12,10 +12,10 @@ Source: https://bit-spinner.com/rv32i/rv32i-decoder
 | AND                    | Bitwise AND                  | 4'b0010     |
 | OR                     | Bitwise OR                   | 4'b0011     |
 | XOR                    | Bitwise XOR                  | 4'b0100     |
-| SHL_LOGICAL            | Shift Left Logical           | 4'b0110     |
-| SHR_LOGICAL            | Shift Right Logical          | 4'b0111     |
-| SHR_ARITHMETIC         | Shift Right Arithmetic       | 4'b1000     |
-| LESS_THAN              | Compare Less Than (Signed)   | 4'b1001     |
+| SHL_LOGICAL            | Shift Left Logical           | 4'b0101     |
+| SHR_LOGICAL            | Shift Right Logical          | 4'b0110     |
+| SHR_ARITHMETIC         | Shift Right Arithmetic       | 4'b0111     |
+| LESS_THAN              | Compare Less Than (Signed)   | 4'b1000     |
 
 
 ## Instruction Format 
@@ -60,13 +60,21 @@ The output immediate is formed by copying the most significant bit (bit 11) to f
 ```
 imm[11:0] → {20{imm[11]}, imm[11:0]}
 ```
-### B-Format & J-Format
+### B-Format
 The immediate field is a 12-bit signed value. But it encodes 13-bit signed offset. This is because RISC-V wants to support the possibility of 2-byte instruction, therefore the LSB bit is always 0.
 The output immediate is formed by:
 1. Appending 1'b0 to the right (shift-left by 1),
 2. Then sign-extending from bit 12 to the upper 19 bits.
 ```
 imm[12:1] → {19{imm[12]}, imm[12:1], 1'b0}
+```
+### J-Format
+The immediate field is a 20-bit signed value. But it encodes 21-bit signed offset. This is because RISC-V wants to support the possibility of 2-byte instruction, therefore the LSB bit is always 0.
+The output immediate is formed by:
+1. Appending 1'b0 to the right (shift-left by 1),
+2. Then sign-extending from bit 20 to the upper 11 bits.
+```
+imm[20:1] → {11{imm[20]}, imm[20:1], 1'b0}
 ```
 ### U-Format
 The immediate field is a 20-bit signed value. It represents the value of 20 MSB bit of the output immediate.

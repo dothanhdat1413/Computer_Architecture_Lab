@@ -1,0 +1,191 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dL:/Questasim/Install/examples
+T_opt
+!s110 1744778143
+V8NUmRK=M3=cN0=Q^Qz_TT0
+Z2 04 12 4 work test_Imm_Gen fast 0
+=1-b42e998d9316-67ff339f-134-50b0
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1744778056
+V9?;_?LYQd5o16aJBZbJeD3
+04 16 4 work test_Branch_Comp fast 0
+=1-b42e998d9316-67ff3347-340-48a0
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1744778117
+VmY<jo:H<<K[Sh`VUbj5?Q0
+R2
+=1-b42e998d9316-67ff3385-123-2da4
+R3
+o-quiet -auto_acc_if_foreign -work work
+R5
+n@_opt2
+R6
+R1
+vALU
+!s110 1744788314
+!i10b 1
+!s100 YDfl<LX[`ZL3dj9e@^RGL3
+INA1hGXDhidn5Zm8aJcT6m0
+Z7 dF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/sim
+w1744777173
+8F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v
+FF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v
+!i122 75
+L0 1 38
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.1;73
+r1
+!s85 0
+31
+!s108 1744788309.000000
+!s107 F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+n@a@l@u
+vBranch_Comp
+!s110 1744788318
+!i10b 1
+!s100 NkTidg763Q0SPNoWC@@680
+I37IgRg:8c_DRRaQj5bLPB0
+R7
+w1744776270
+8F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Branch_Comp.v
+FF:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Branch_Comp.v
+!i122 76
+L0 1 18
+R8
+R9
+r1
+!s85 0
+31
+!s108 1744788318.000000
+!s107 F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Branch_Comp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Branch_Comp.v|
+!i113 0
+R10
+R5
+n@branch_@comp
+vImm_Gen
+Z11 !s110 1744777816
+!i10b 1
+!s100 7P@>DY5]Ri;CZ;i9_?eZJ3
+I`mBYlDhDS[F_1@AkeT:Gh2
+Z12 dK:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/sim
+w1744776287
+8K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Imm_Gen.v
+FK:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Imm_Gen.v
+!i122 71
+L0 1 22
+R8
+R9
+r1
+!s85 0
+31
+Z13 !s108 1744777816.000000
+!s107 K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Imm_Gen.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Imm_Gen.v|
+!i113 0
+R10
+R5
+n@imm_@gen
+vtest_ALU
+R11
+!i10b 1
+!s100 I936Z:cf:5BAS1OlW]<:W1
+ICe670_[0j5L<Il9dnfDDD3
+R12
+w1744777549
+8K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v
+FK:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v
+!i122 72
+L0 1 281
+R8
+R9
+r1
+!s85 0
+31
+R13
+!s107 K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v|
+!i113 0
+R10
+R5
+ntest_@a@l@u
+vtest_Branch_Comp
+R11
+!i10b 1
+!s100 lfYLA>hFMaJfn?<6f>SRj1
+I9Z;@Gd43e^na:Ng6X65]n0
+R12
+w1744776375
+8K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Branch_Comp.v
+FK:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Branch_Comp.v
+!i122 73
+L0 1 59
+R8
+R9
+r1
+!s85 0
+31
+R13
+!s107 K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Branch_Comp.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Branch_Comp.v|
+!i113 0
+R10
+R5
+ntest_@branch_@comp
+vtest_Imm_Gen
+R11
+!i10b 1
+!s100 G2jnk1k`K:lM:7PO9PA=Z2
+I2XmLkDK=0L8CA_FdH3o:j0
+R12
+w1744776381
+8K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Imm_Gen.v
+FK:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Imm_Gen.v
+!i122 74
+L0 1 50
+R8
+R9
+r1
+!s85 0
+31
+R13
+!s107 K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Imm_Gen.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|K:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_Imm_Gen.v|
+!i113 0
+R10
+R5
+ntest_@imm_@gen

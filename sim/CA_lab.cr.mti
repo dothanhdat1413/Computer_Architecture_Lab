@@ -1,0 +1,15 @@
+{F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v} {1 {vlog -work work -vopt -stats=none {F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/ALU.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} {F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/rtl/Branch_Comp.v} {1 {vlog -work work -vopt -stats=none {F:/OneDrive - Hanoi University of Science and Technology/EDABK Lab/CA_Lab_2025/Computer_Architecture_Lab/test/test_ALU.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module test_ALU
+
+Top level modules:
+	test_ALU
+
+} {} {}}

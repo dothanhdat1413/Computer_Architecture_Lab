@@ -31,8 +31,8 @@ module test_ALU();
     localparam SUB_OPERAND_1            = "../test/input_data/SUB_OPERAND_1.txt";
     localparam SUB_RESULT               = "../test/input_data/SUB_RESULT.txt";
 
-    localparam BITWISE_OPERAND_0        = "../test/input_data/AND_OPERAND_0.txt";
-    localparam BITWISE_OPERAND_1        = "../test/input_data/AND_OPERAND_1.txt";
+    localparam BITWISE_OPERAND_0        = "../test/input_data/BITWISE_OPERAND_0.txt";
+    localparam BITWISE_OPERAND_1        = "../test/input_data/BITWISE_OPERAND_1.txt";
     localparam AND_RESULT               = "../test/input_data/AND_RESULT.txt";
     localparam OR_RESULT                = "../test/input_data/OR_RESULT.txt";
     localparam XOR_RESULT               = "../test/input_data/XOR_RESULT.txt";
@@ -87,6 +87,7 @@ module test_ALU();
 integer result_ADD, result_SUB, result_AND, result_OR, result_XOR;
 integer result_SHL_LOGICAL, result_SHR_LOGICAL, result_SHR_ARITHMETIC, result_LESS_THAN;
 
+integer j;
 //_____________________Read testcase input__________________________//
     initial begin
         $readmemh(ADD_OPERAND_0, ADD_operand_0);
@@ -99,6 +100,11 @@ integer result_SHL_LOGICAL, result_SHR_LOGICAL, result_SHR_ARITHMETIC, result_LE
 
         $readmemh(BITWISE_OPERAND_0, BITWISE_operand_0);
         $readmemh(BITWISE_OPERAND_1, BITWISE_operand_1);
+        // for(j = 0; j < 1000; j = j+1) begin
+        //     $display("%d", BITWISE_operand_0[j]);
+        //     // $display("%d", BITWISE_operand_1[j]);
+        // end
+
         $readmemh(AND_RESULT, AND_result);
         $readmemh(OR_RESULT, OR_result);
         $readmemh(XOR_RESULT, XOR_result);
@@ -146,43 +152,75 @@ integer result_SHL_LOGICAL, result_SHR_LOGICAL, result_SHR_ARITHMETIC, result_LE
         end
     endtask
 
+    task check_output;
+        input [31:0] expected_result;
+        input [31:0] result;
+        inout integer check_result;
+        begin
+            if (result !== expected_result) begin
+                $display("Test failed: %d != %d", result, expected_result);
+            end else begin
+                check_result = check_result + 1;
+            end
+        end
+    endtask
+
 //__________________________Run testcase____________________________//
+
     integer i;
     initial begin
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(ADD, ADD_operand_0[i], ADD_operand_1[i]);
+            if(result!= ADD_result[i])$display("ADD %d: %d + %d = %d, expected: %d ", i, ADD_operand_0[i], ADD_operand_1[i], result, ADD_result[i]);
+            check_output(ADD_result[i], result, result_ADD);
         end
         
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(SUB, SUB_operand_0[i], SUB_operand_1[i]);
+            if(result!= SUB_result[i])$display("SUB %d: %d - %d = %d, expected: %d ", i, SUB_operand_0[i], SUB_operand_1[i], result, SUB_result[i]);
+            check_output(SUB_result[i], result, result_SUB);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(AND, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+            if(result!= AND_result[i])$display("AND %d: %d & %d = %d, expected: %d ", i, BITWISE_operand_0[i], BITWISE_operand_1[i], result, AND_result[i]);
+            check_output(AND_result[i], result, result_AND);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(OR, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+            if(result!= OR_result[i])$display("OR %d: %d | %d = %d, expected: %d ", i, BITWISE_operand_0[i], BITWISE_operand_1[i], result, OR_result[i]);
+            check_output(OR_result[i], result, result_OR);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(XOR, BITWISE_operand_0[i], BITWISE_operand_1[i]);
+            if(result!= XOR_result[i])$display("XOR %d: %d ^ %d = %d, expected: %d ", i, BITWISE_operand_0[i], BITWISE_operand_1[i], result, XOR_result[i]);
+            check_output(XOR_result[i], result, result_XOR);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(SHL_LOGICAL, SHL_LOGICAL_operand_0[i], SHL_LOGICAL_operand_1[i]);
+            if(result!= SHL_LOGICAL_result[i])$display("SHL_LOGICAL %d: %b << %d = %b, expected: %b ", i, SHL_LOGICAL_operand_0[i], SHL_LOGICAL_operand_1[i][4:0], result, SHL_LOGICAL_result[i]);
+            check_output(SHL_LOGICAL_result[i], result, result_SHL_LOGICAL);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(SHR_LOGICAL, SHR_LOGICAL_operand_0[i], SHR_LOGICAL_operand_1[i]);
+            if(result!= SHR_LOGICAL_result[i])$display("SHR_LOGICAL %d: %b >> %d = %b, expected: %b ", i, SHR_LOGICAL_operand_0[i], SHR_LOGICAL_operand_1[i][4:0], result, SHR_LOGICAL_result[i]);
+            check_output(SHR_LOGICAL_result[i], result, result_SHR_LOGICAL);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(SHR_ARITHMETIC, SHR_ARITHMETIC_operand_0[i], SHR_ARITHMETIC_operand_1[i]);
+            if(result!= SHR_ARITHMETIC_result[i])$display("Failed SHR_ARITHMETIC %d: %b >>> %d = %b, expected: %b ", i, SHR_ARITHMETIC_operand_0[i], SHR_ARITHMETIC_operand_1[i][4:0], result, SHR_ARITHMETIC_result[i]);
+            check_output(SHR_ARITHMETIC_result[i], result, result_SHR_ARITHMETIC);
         end
 
         for(i = 0; i < 1000; i = i+1) begin
             drive_input(LESS_THAN, LESS_THAN_operand_0[i], LESS_THAN_operand_1[i]);
+            if(result!= LESS_THAN_result[i])$display("LESS_THAN %d: %d < %d = %b, expected: %b ", i, $signed(LESS_THAN_operand_0[i]), $signed(LESS_THAN_operand_1[i]), result, LESS_THAN_result[i]);
+            check_output(LESS_THAN_result[i], result, result_LESS_THAN);
         end
 
         #1;
@@ -198,84 +236,6 @@ integer result_SHL_LOGICAL, result_SHR_LOGICAL, result_SHR_ARITHMETIC, result_LE
         $display("LESS_THAN: %d tests passed", result_LESS_THAN);
         $finish;
     end
-//__________________________Check output____________________________//
 
-
-    always @(result) begin
-        case (ALU_Sel)
-            ADD: begin
-                if (result !== operand_0 + operand_1) begin
-                    $display("ADD failed: %d + %d != %d", operand_0, operand_1, result);
-                end else begin
-                    $display("ADD passed: %d + %d = %d", operand_0, operand_1, result);
-                    result_ADD = result_ADD + 1;
-                end
-            end
-            SUB: begin
-                if (result !== operand_0 - operand_1) begin
-                    $display("SUB failed: %d - %d != %d", operand_0, operand_1, result);
-                end else begin
-                    $display("SUB passed: %d - %d = %d", operand_0, operand_1, result);
-                    result_SUB = result_SUB + 1;
-                end
-            end
-            AND: begin
-                if (result !== operand_0 & operand_1) begin
-                    $display("AND failed: %d & %d != %d", operand_0, operand_1, result);
-                end else begin
-                    $display("AND passed: %d & %d = %d", operand_0, operand_1, result);
-                    result_AND = result_AND + 1;
-                end
-            end
-            OR: begin
-                if (result !== operand_0 | operand_1) begin
-                    $display("OR failed: %d | %d != %d", operand_0, operand_1, result);
-                end else begin
-                    $display("OR passed: %d | %d = %d", operand_0, operand_1, result);
-                    result_OR = result_OR + 1;
-                end
-            end
-            XOR: begin
-                if (result !== operand_0 ^ operand_1) begin
-                    $display("XOR failed: %d ^ %d != %d", operand_0, operand_1, result);
-                end else begin
-                    $display("XOR passed: %d ^ %d = %d", operand_0, operand_1, result);
-                    result_XOR = result_XOR + 1;
-                end
-            end
-            SHL_LOGICAL: begin
-                if (result !== (operand_0 << 1)) begin // Logical shift left by 1 bit.
-                    $display("SHL_LOGICAL failed: %b << 1 != %b", operand_0, result);
-                end else begin
-                    $display("SHL_LOGICAL passed: %b << 1 = %b", operand_0, result);
-                    result_SHL_LOGICAL = result_SHL_LOGICAL + 1;
-                end
-            end
-            SHR_LOGICAL: begin
-                if (result !== (operand_0 >> 1)) begin // Logical shift right by 1 bit.
-                    $display("SHR_LOGICAL failed: %b >> 1 != %b", operand_0, result);
-                end else begin
-                    $display("SHR_LOGICAL passed: %b >> 1 = %b", operand_0, result);
-                    result_SHR_LOGICAL = result_SHR_LOGICAL + 1;
-                end
-            end
-            SHR_ARITHMETIC: begin
-                if (result !== ($signed(operand_0) >>> 1)) begin // Arithmetic shift right by 1 bit.
-                    $display("SHR_ARITHMETIC failed: %b >>> 1 != %b", operand_0, result);
-                end else begin
-                    $display("SHR_ARITHMETIC passed: %b >>> 1 = %b", operand_0, result);
-                    result_SHR_ARITHMETIC = result_SHR_ARITHMETIC + 1;
-                end
-            end
-            LESS_THAN: begin
-                if (result !== ($signed(operand_0) < $signed(operand_1) ? 32'b1 : 32'b0)) begin // Less than comparison.
-                    $display("LESS_THAN failed: %d < %d != %b", operand_0, operand_1, result);
-                end else begin
-                    $display("LESS_THAN passed: %d < %d = %b", operand_0, operand_1, result);
-                    result_LESS_THAN = result_LESS_THAN + 1;
-                end
-            end
-        endcase
-    end 
 
 endmodule
