@@ -1,6 +1,6 @@
 ## LUI, AUIPC Debug
 LUI, AUIPC instructions are U-format Instruction, with the same instruction format. The difference is the operator to add in ALU, with LUI is 0, with AUIPC is PC value. Therefore, the Control Unit should drive the right input into the ALU from Register file or PC register. 
-![LUI_AUIPC instruction format](./docs/images/LUI_AUIPC.png)
+![LUI_AUIPC instruction format](../docs/images/LUI_AUIPC.png)
 ### LUI — Load Upper Immediate
 - **Format**: `lui rd, imm`
 - **Description**:  
