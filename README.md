@@ -51,7 +51,7 @@ Source: https://bit-spinner.com/rv32i/rv32i-decoder
 |    31   |   30–21   |    20   |    19–12   | 11–7 |   6–0   |  
 | imm[20] | imm[10:1] | imm[11] | imm[19:12] |  rd  | opcode  |
 ```
-## Datapath
+## Single Cycle Datapath 
 ![RV32I_Datapath](./docs/images/RV32I_Datapath.png)
 ## Immediate Generator
 ### I-Format & S-Format
