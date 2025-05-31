@@ -16,8 +16,8 @@ module control_unit #(
 	output                      ASel,
   output                      BSel,
   output [ALUCTRL_WIDTH-1:0]  ALUSel,
-  output                      MemRW,      //Read = 0, Write = 1 (Default: Read)
-  output [1:0]                WBSel
+  output                      MemRW, //Read = 0, Write = 1 (Default: Read)
+  output [1:0]                WBSel // WB
 );
 
 wire arithmetic;

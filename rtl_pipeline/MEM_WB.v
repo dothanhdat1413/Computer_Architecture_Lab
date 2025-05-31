@@ -5,6 +5,10 @@ module MEM_WB (
   input [31:0] MEM_PC_Plus4,
   input [31:0] MEM_Read_Data,
   input [31:0] MEM_Instr,
+
+  input [1:0] MEM_WBSel,
+  input MEM_RegWEn,
+
   output reg [31:0] MEM_WB_ALU_Result,
   output reg [31:0] MEM_WB_PC_Plus4,
   output reg [31:0] MEM_WB_Read_Data,
