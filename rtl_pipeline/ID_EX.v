@@ -7,6 +7,8 @@ module ID_EX (
   input [31:0] ID_Imm,
   input [31:0] ID_Instr,
 
+  input [4:0] ID_Rd,
+
   input [1:0] ID_ASel,
   input [1:0] ID_BSel,
   input [3:0] ID_ALUSel,
@@ -22,6 +24,8 @@ module ID_EX (
   output reg [31:0] ID_EX_PC, 
   output reg [31:0] ID_EX_Imm,
   output reg [31:0] ID_EX_Instr,
+
+  output reg [4:0] ID_EX_Rd,
 
   output reg [1:0] ID_EX_ASel,
   output reg [1:0] ID_EX_BSel,

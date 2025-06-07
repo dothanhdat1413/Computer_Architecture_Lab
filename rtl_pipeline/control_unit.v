@@ -17,30 +17,42 @@ module control_unit #(
   output                      BSel,
   output [ALUCTRL_WIDTH-1:0]  ALUSel,
   output                      MemRW, //Read = 0, Write = 1 (Default: Read)
-  output [1:0]                WBSel // WB
+  output [1:0]                WBSel, // WB
+
+
+  input [31:0]                ID_EX_Instr,
+
+  output                      IF_flush,
+  output                      ID_flush,
+  output                      EX_flush 
+
 );
 
 wire arithmetic;
 
-main_decoder #(
+main_decoder_branch_prediction #(
     .OP_EFF_WIDTH(OP_EFF_WIDTH),
     .FUNCT3_WIDTH(FUNCT3_WIDTH)
 )
-MainDecode (
+MainDecodeBranchPrediction (
     .opcode_eff(opcode_eff),
     .funct3(funct3),
     .BrEq(BrEq),
     .BrLT(BrLT),
     .PCSel(PCSel),
     .ImmSel(ImmSel),
-	.RegWEn(RegWEn),
-	.BrUn(BrUn),
-	.ASel(ASel),
+    .RegWEn(RegWEn),
+    .BrUn(BrUn),
+    .ASel(ASel),
     .BSel(BSel),
     .MemRW(MemRW),
     .WBSel(WBSel),
     .arithmetic(arithmetic),
-    .i_type(i_type)
+    .i_type(i_type),
+    .ID_EX_Instr(ID_EX_Instr),
+    .IF_flush(IF_flush),
+    .ID_flush(ID_flush),
+    .EX_flush(EX_flush)
 );
 
 ALU_decoder #(

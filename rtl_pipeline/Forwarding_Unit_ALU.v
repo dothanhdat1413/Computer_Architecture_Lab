@@ -1,4 +1,4 @@
-module Fowarding_Unit(
+module Forwarding_Unit_ALU(
     input [4:0] ID_EX_rs1,
     input [4:0] ID_EX_rs2,
     input [4:0] EX_MEM_rd,
